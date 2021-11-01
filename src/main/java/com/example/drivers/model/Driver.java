@@ -34,9 +34,8 @@ public class Driver {
         this.quoteAmount = quoteAmount;
 
     }
-
-    private String prefix;
     @Column
+    private String prefix;
     private String firstName;
     private String lastName;
     private String contactNumber;
