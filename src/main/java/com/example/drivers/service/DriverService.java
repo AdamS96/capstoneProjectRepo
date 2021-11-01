@@ -12,37 +12,37 @@ import java.util.Optional;
 @Service
 public class DriverService {
 
-    private final DriverRepository repository;
+    private final DriverRepository driverRepository;
     private final QuoteAmountCalculator quoteAmountCalculator;
 
-    public DriverService(DriverRepository repository, QuoteAmountCalculator quoteAmountCalculator){
-        this.repository = repository;
+    public DriverService(DriverRepository driverRepository, QuoteAmountCalculator quoteAmountCalculator){
+        this.driverRepository = driverRepository;
         this.quoteAmountCalculator = quoteAmountCalculator;
     }
 
     public List<Driver> getAllDrivers(){
-        return repository.findAll();
+        return driverRepository.findAll();
     }
 
     public Driver save(Driver driver){
         quoteAmountCalculator.calculateInsuranceQuote(driver);
-        return repository.save(driver);
+        return driverRepository.save(driver);
     }
 
     public Optional<Driver> getSingleDriver(Long id) {
-        return repository.findById(id);
+        return driverRepository.findById(id);
     }
 
     public void deleteSingleDriver(Long id) {
-        repository.deleteById(id);
+        driverRepository.deleteById(id);
     }
 
     public Optional<Driver> updateNumber(Long id, String contactNumber) {
 
-        return repository.findById(id)
+        return driverRepository.findById(id)
                 .map(recordForUpdating -> {
                     recordForUpdating.setContactNumber(contactNumber);
-                    return repository.save(recordForUpdating);
+                    return driverRepository.save(recordForUpdating);
                 });
     }
 }
