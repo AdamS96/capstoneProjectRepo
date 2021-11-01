@@ -35,14 +35,15 @@ public class DriverController {
     Optional<Driver> getSingleDriver(@RequestParam Long id) {
         return service.getSingleDriver(id);
     }
+
     @CrossOrigin(origins = "http://localhost:3000")
-    @DeleteMapping("/drivers")
+    @DeleteMapping("/drivers/id")
     void deleteSingleDriver(@RequestParam Long id) {
         service.deleteSingleDriver(id);
     }
 
     @CrossOrigin(origins = "http://localhost:3000")
-    @PutMapping("/drivers")
+    @PutMapping("/drivers/id")
     void updateContactNumber(@RequestParam Long id, @RequestParam String contactNumber) {
         service.updateNumber(id, contactNumber);
     }
