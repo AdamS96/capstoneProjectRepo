@@ -7,6 +7,7 @@ import com.example.drivers.service.businessLogic.QuoteAmountCalculator;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 
 @Service
@@ -37,12 +38,14 @@ public class DriverService {
         driverRepository.deleteById(id);
     }
 
-    public Optional<Driver> updateNumber(Long id, String contactNumber) {
+    public Driver updateNumber(Long id, String contactNumber) {
 
         return driverRepository.findById(id)
                 .map(recordForUpdating -> {
                     recordForUpdating.setContactNumber(contactNumber);
                     return driverRepository.save(recordForUpdating);
-                });
+                }).orElseThrow(()-> new NoSuchElementException("No such driver"));
     }
+
+
 }

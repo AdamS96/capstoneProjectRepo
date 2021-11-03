@@ -1,4 +1,4 @@
-    INSERT INTO Driver(id, prefix, first_name, last_name, contact_number, address_line1, address_line2, city,
+    INSERT INTO DRIVER_DETAILS(id, prefix, first_name, last_name, contact_number, address_line1, address_line2, city,
                       postcode,
                       vehicle_type, engine_size, additional_drivers, used_commercial_purposes, used_outside_state,
                       current_vehicle_value,

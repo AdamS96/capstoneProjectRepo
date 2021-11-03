@@ -1,10 +1,10 @@
 package com.example.drivers.model;
 
 import net.bytebuddy.dynamic.loading.InjectionClassLoader;
-
+import javax.persistence.Entity;
 import javax.persistence.*;
 
-@Entity
+@Entity (name = "DRIVER_DETAILS")
 public class Driver {
 
     @Id

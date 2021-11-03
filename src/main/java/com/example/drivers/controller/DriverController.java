@@ -5,6 +5,7 @@ import com.example.drivers.model.Driver;
 import com.example.drivers.service.DriverService;
 import org.springframework.web.bind.annotation.*;
 
+import java.nio.file.Path;
 import java.util.List;
 import java.util.Optional;
 
@@ -43,10 +44,11 @@ public class DriverController {
     }
 
     @CrossOrigin(origins = "http://localhost:3000")
-    @PutMapping("/drivers/id")
+    @PutMapping("/drivers/")
     void updateContactNumber(@RequestParam Long id, @RequestParam String contactNumber) {
         service.updateNumber(id, contactNumber);
     }
+
 
 
 }
