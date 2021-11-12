@@ -1,0 +1,158 @@
+.insurance-form{
+	padding-bottom: 50px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.insurance-form.backdrop{
+	background-color: #f6f6f6;
+}
+
+.insurance-form .content{
+	box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);
+	background-color: white;
+}
+
+.insurance-form .heading-layout{
+    padding-top: 50px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.insurance-form .heading-layout p{
+	text-align: center;
+	max-width: 420px;
+	margin: auto;
+	opacity:0.7;
+}
+
+.insurance-form.backdrop .heading-layout p{
+	opacity:0.8;
+}
+
+.insurance-form .heading-layout h1,
+.insurance-form .heading-layout h2,
+.insurance-form .heading-layout h3 {
+	margin-bottom:1.2rem;
+	color: #FCAE1E;
+}
+
+.insurance-form form{
+	border-top: 2px solid #01329e;
+	box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);
+	background-color: #ffffff;
+	padding: 0;
+	max-width: 1600px;
+	margin: auto;
+}
+
+.insurance-form .section-heading{
+	font-size: 1em;
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+	margin-bottom: 0.8em;
+	font-weight: 600;
+	padding-bottom: 8px;
+	color: #01329e;
+}
+
+ input[type='radio']:after {
+        width: 15px;
+        height: 15px;
+        border-radius: 15px;
+        top: -3px;
+        left: -1px;
+        position: relative;
+        background-color: #d1d3d1;
+        content: '';
+        display: inline-block;
+        visibility: visible;
+        border: 2px solid white;
+    }
+
+    input[type='radio']:checked:after {
+        width: 15px;
+        height: 15px;
+        border-radius: 15px;
+        top: -3px;
+        left: -1px;
+        position: relative;
+        background-color: #01329e;
+        content: '';
+        display: inline-block;
+        visibility: visible;
+        border: 2px solid white;
+    }
+
+
+.insurance-form .input-details{
+	padding: 25px 25px 15px;
+}
+
+.insurance-form .input-details label{
+	font-size: 12px;
+	font-weight: 600;
+	margin-bottom: 15px;
+	color: #79818a;
+	text-transform: uppercase;
+}
+
+.insurance-form .input-details button{
+	margin-top: 0.6em;
+	padding:12px 5;
+	font-weight: 500;
+	background-color: #01329e;
+	border: #01329e;
+}
+.insurance-form .block-heading{
+    padding-top: 50px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.insurance-form .block-heading p{
+	text-align: left;
+	max-width: 420px;
+	margin-bottom: 20px;
+	
+	opacity:0.7;
+}
+
+.insurance-form.dark .block-heading p{
+	opacity:0.8;
+}
+
+.insurance-form .block-heading h1,
+.insurance-form .block-heading h2,
+.insurance-form .block-heading h3 {
+	margin-bottom:1.2rem;
+	color: #01329e;
+}
+
+.insurance-form .labelstyle{
+	padding-right: 25px;
+	padding-left: 10px;
+	
+}
+
+.insurance-form .invalidInput{
+	color: red;
+	font-size: 13px;
+	padding-top: 5px;
+	font-weight: 500;
+}
+
+
+@media (min-width: 576px) {
+	.insurance-form .section-heading {
+		font-size: 1.2em;
+	}
+
+
+  	.insurance-form .input-details {
+    	padding: 40px 40px 30px;
+    }
+
+  	.insurance-form .input-details button {
+    	margin-top: 2em;
+    }
+}
+

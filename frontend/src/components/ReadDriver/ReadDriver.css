@@ -1,0 +1,104 @@
+
+.user-details .section-heading{
+	font-size: 18px;
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+	margin-bottom: 0.8em;
+	font-weight: 600;
+	padding-bottom: 10px;
+    padding-top: 15px;
+	color: #01329e;
+}
+.user-details .block-heading{
+    padding-top: 50px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.user-details .block-heading p{
+	text-align: left;
+	max-width: 420px;
+	margin-bottom: 20px;
+	
+	opacity:0.7;
+}
+
+.user-details.backdrop .block-heading p{
+	opacity:0.8;
+}
+
+.user-details .block-heading h1,
+.user-details .block-heading h2,
+.user-details .block-heading h3 {
+	margin-bottom:1.2rem;
+	color: #01329e;
+}
+
+.user-details.backdrop{
+	background-color: #f6f6f6;
+    
+}
+.user-details.backdrop .heading-layout p{
+	opacity:0.8;
+    
+}
+.user-content{
+    border-top: 2px solid #01329e;
+    background-color: white;
+    margin-bottom:250px;
+}
+
+fieldset{
+    margin:  0;
+    padding: 1em 2em;
+    border: solid 1px #ccc;
+    border-radius: 6px;
+    min-width: 200px;
+    width: 100%;
+}
+
+.spantext{
+color: black;
+font-weight: 500;
+}
+.userdetailFormat p{
+    font-size: 15px;
+	font-weight: 500;
+	margin-bottom: 15px;
+	color: #79818a;
+	
+}
+.vechicledetailFormat p{
+    font-size: 15px;
+	font-weight: 500;
+	margin-bottom: 15px;
+	color: #79818a;
+	
+}
+.addressdetailFormat p{
+    font-size: 15px;
+	font-weight: 500;
+	margin-bottom: 15px;
+	color: #79818a;
+	
+}
+.policydetailFormat p{
+    font-size: 15px;
+	font-weight: 500;
+	margin-bottom: 15px;
+	color: #79818a;
+	
+}
+
+.buttonFormat{
+  
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.user-details button{
+
+margin-top: 0.6em;
+	padding:12px 5;
+	font-weight: 500;
+	background-color: #01329e;
+	border: #01329e;}
