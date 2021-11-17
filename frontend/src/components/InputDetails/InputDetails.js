@@ -3,6 +3,7 @@ import './InputDetails.css';
 import axios from 'axios';
 import { Button, Form, Row, Col, Container } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
+import {Link} from "react-router-dom";
 
 
 function InputDetails() {
@@ -36,8 +37,8 @@ function InputDetails() {
             <section className="insurance-form backdrop">
                 <Container>
                     <div className="block-heading">
-                        <h2>Car Insurance Quote</h2>
-                        <p>Fill out this form to get a new qoute on your car insurance</p>
+                        <h2>Vehicle Insurance Quote</h2>
+                        <p>Fill out this form to get a new quote on your car insurance</p>
                     </div>
                     <Form onSubmit={handleSubmit(onSubmit)}>
                         <div className="input-details">
@@ -428,6 +429,7 @@ function InputDetails() {
 
                         </div>
                     </Form>
+
                 </Container>
             </section>
         </main>

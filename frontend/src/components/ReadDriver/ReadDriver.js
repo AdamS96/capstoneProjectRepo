@@ -72,6 +72,11 @@ function ReadDriver (){
       <p>Used for Commercial Purposes: <span className="spantext">{driverData.usedCommercialPurposes}</span></p>
       <p>Used Outside State: <span className="spantext">{driverData.usedOutsideState}</span></p>
       </div>
+                    <h2 className="section-heading">Quoted Insurance Price</h2>
+
+                    <div className="quoteFormat">
+                        <p>Quoted Insurance Price: <span className="spantext">£{driverData.quoteAmount}</span></p>
+                    </div>
       
 <div className="buttonFormat">
 <Link to="/administrator">

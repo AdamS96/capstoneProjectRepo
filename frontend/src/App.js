@@ -5,6 +5,7 @@ import Administrator from './components/Administrator/Administrator';
 import UpdateDetails from './components/UpdateDetails/UpdateDetails';
 import ReadDriver from './components/ReadDriver/ReadDriver';
 import React from 'react'
+import NavBar from "./components/NavBar/NavBar";
 
 function App() {
   
@@ -14,7 +15,7 @@ function App() {
 <div>
       <BrowserRouter>
         <div className="App">
-          
+        <NavBar/>
           <div>
             <Route exact path="/" component={InputDetails} />
           </div>

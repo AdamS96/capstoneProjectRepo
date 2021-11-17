@@ -88,6 +88,17 @@ font-weight: 500;
 	color: #79818a;
 	
 }
+.quoteFormat p{
+	font-size: 15px;
+	font-weight: 600;
+	margin-bottom: 10px;
+	color: #79818a;
+
+}
+.quoteFormat span{
+	font-weight: 650;
+
+}
 
 .buttonFormat{
   
