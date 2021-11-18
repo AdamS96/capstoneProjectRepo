@@ -75,6 +75,7 @@ function Administrator() {
             axios.delete(endpointURL)
                 .then(() => {
                     window.alert(`Driver ${ID} Successfully Deleted`)
+                    setTimeout(() => window.location.reload(), 1000);
                 })
                 .catch((err) => {
                     console.log(err)
