@@ -3,10 +3,11 @@ import './InputDetails.css';
 import axios from 'axios';
 import { Button, Form, Row, Col, Container } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
+import {useHistory} from "react-router";
 
 
 function InputDetails() {
-
+    let history = useHistory();
     const {
         formState,
         register,
@@ -24,6 +25,7 @@ function InputDetails() {
             window.alert(`Success!`);
             window.location.reload(false);
     };
+
 
 
     return (

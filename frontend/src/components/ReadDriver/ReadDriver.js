@@ -20,7 +20,7 @@ function ReadDriver() {
     useEffect(() => {
         callMockAPIWithAxiosGET();
     }, []);
-
+    
 
     return (
         <main className="page user-details">
@@ -68,7 +68,7 @@ function ReadDriver() {
 
                                     <h2 className="section-heading">Quoted Insurance Price</h2>
                                     <div className="quoteFormat">
-                                        <p>Quoted Insurance Price: <span className="spantext">£{driverData.quoteAmount}</span></p>
+                                        <p>Quoted Insurance Price: <span className="spantext">£{Number(driverData.quoteAmount).toFixed(2)}</span></p>
                                     </div>
 
                                     <div className="buttonFormat">
