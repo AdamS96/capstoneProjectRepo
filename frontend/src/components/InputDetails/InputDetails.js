@@ -3,7 +3,6 @@ import './InputDetails.css';
 import axios from 'axios';
 import { Button, Form, Row, Col, Container } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
-import {Link} from "react-router-dom";
 
 
 function InputDetails() {
@@ -22,14 +21,9 @@ function InputDetails() {
         axios.post(endpointURL, data)
             .then(response => console.log(response.data))
             .catch(err => console.log());
-            //setTimeout(() => window.location.reload(), 1000);
             window.alert(`Success!`);
             window.location.reload(false);
     };
-
-    // const usedOutsideState = watch("usedOutsideState");
-    // const usedCommercialPurposes = watch("usedCommercialPurposes");
-
 
 
     return (
@@ -43,12 +37,10 @@ function InputDetails() {
                     <Form onSubmit={handleSubmit(onSubmit)}>
                         <div className="input-details">
                             <h3 className="section-heading">Personal Details</h3>
-
                             <Row className="g-3">
 
                                 <Col sm={1}>
                                     <Form.Group className="mb-3" controlId="prefix">
-
                                         <Form.Label>Prefix</Form.Label>
                                         <Form.Control type="text" placeholder="Mr" aria-label="prefix" aria-describedby="basic-addon1" {...register('prefix', {
                                             required: '*Required',
@@ -198,7 +190,6 @@ function InputDetails() {
 
                                 <Col sm={12}>
                                     <Form.Group className="mb-3" controlId="vehicleType">
-
                                         <Row>
                                             <Col md={6}>
                                                 <Form.Label>Vehicle Type</Form.Label>
@@ -219,7 +210,6 @@ function InputDetails() {
                                                 <div className="invalidInput"><p>{formState.errors.vehicleType && formState.errors.vehicleType.message}</p></div>
                                             </Col>
                                         </Row>
-
                                     </Form.Group>
                                 </Col>
 
@@ -267,7 +257,6 @@ function InputDetails() {
                                                             value: 50000,
                                                         },
                                                         pattern: {
-                                                            
                                                             value: /^[0-9]*$/,
                                                             message: 'Please only enter numeric values'
                                                         },
@@ -275,13 +264,11 @@ function InputDetails() {
                                                 <div className="invalidInput"><p>{formState.errors.currentVehicleValue && formState.errors.currentVehicleValue.message}</p></div>
                                             </Col>
                                         </Row>
-
                                     </Form.Group>
                                 </Col>
 
                                 <Col sm={12}>
                                     <Form.Group className="mb-3" controlId="dateVehicleRegistered">
-
                                         <Row>
                                             <Col md={6}>
                                                 <Form.Label>When was this vehicle first registered</Form.Label>
@@ -293,23 +280,18 @@ function InputDetails() {
                                                         pattern: {
                                                             value: /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/,
                                                             message: 'Please enter a valid date in format yyyy-mm-dd',
-
                                                         },
-                                                       
                                                     })} />
                                                 <div className="invalidInput"><p>{formState.errors.dateVehicleRegistered && formState.errors.dateVehicleRegistered.message}</p></div>
                                             </Col>
                                         </Row>
-
                                     </Form.Group>
                                 </Col>
                             </Row>
 
 
                             <h2 className="section-heading">Vehicle Usage</h2>
-
                             <Row>
-
 
                                 <Col sm={12}>
                                     <Form.Group className="mb-3" controlId="additionalDrivers">
@@ -324,7 +306,6 @@ function InputDetails() {
                                                         min: {
                                                             value: 1,
                                                             message: 'Please select between 1-4 additional drivers',
-
                                                         },
                                                     })}>
                                                     <option style={{ display: 'none' }} value="">Select Addditional Drivers</option>
@@ -340,39 +321,28 @@ function InputDetails() {
                                 </Col>
 
 
-
-
-
                                 <Col sm={12}>
                                     <Form.Group className="mb-3" controlId="usedCommercialPurposes">
-
                                         <Row>
                                             <Col md={6}>
                                                 <Form.Label>Used for commercial purposes</Form.Label>
                                             </Col>
-
                                             <Col md={6}>
                                                 <input
                                                     type="radio"
                                                     id="yes"
                                                     className="radio"
                                                     value="Yes"
-
                                                     {...register("usedCommercialPurposes", { required: true })} />
-
-
                                                 <Form.Label className="labelstyle">Yes</Form.Label>
                                                 <input type="radio"
                                                     id="no"
                                                     className="radio"
                                                     value="No"
-
                                                     {...register("usedCommercialPurposes", { required: true })} />
                                                 <Form.Label className="labelstyle">No</Form.Label>
-
                                                 <div className="invalidInput"><p>{errors.usedCommercialPurposes?.type === "required" &&
                                                     "*Please select an Option"}</p></div>
-
                                             </Col>
                                         </Row>
                                     </Form.Group>
@@ -380,63 +350,41 @@ function InputDetails() {
 
                                 <Col sm={12}>
                                     <Form.Group className="mb-3" controlId="usedOutsideState">
-
                                         <Row>
                                             <Col md={6}>
                                                 <Form.Label>Used outside state</Form.Label>
                                             </Col>
 
-
                                             <Col md={6}>
-
-
                                                 <input
                                                     type="radio"
                                                     id="yes"
                                                     className="radio"
                                                     value="Yes"
-
                                                     {...register("usedOutsideState", { required: true })} />
-
-
                                                 <Form.Label className="labelstyle">Yes</Form.Label>
                                                 <input type="radio"
                                                     id="no"
                                                     className="radio"
                                                     value="No"
-
                                                     {...register("usedOutsideState", { required: true })} />
                                                 <Form.Label className="labelstyle">No</Form.Label>
-
                                                 <div className="invalidInput"> <p>{errors.usedOutsideState?.type === "required" &&
                                                     "*Please select an Option"}</p></div>
-
                                             </Col>
                                         </Row>
                                     </Form.Group>
                                 </Col>
-
-
                             </Row>
                             <Col sm={12}>
                                 <Button type="submit">Submit</Button>
-
-
-
                             </Col>
-
-
-
                         </div>
                     </Form>
-
                 </Container>
             </section>
         </main>
     );
-
-
-
 
 }
 export default InputDetails;
