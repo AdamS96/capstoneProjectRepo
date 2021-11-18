@@ -348,7 +348,7 @@ function InputDetails() {
 
                                         <Row>
                                             <Col md={6}>
-                                                <Form.Label>Used for commerical purposes</Form.Label>
+                                                <Form.Label>Used for commercial purposes</Form.Label>
                                             </Col>
 
                                             <Col md={6}>

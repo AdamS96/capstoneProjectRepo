@@ -1,0 +1,24 @@
+.Navbar {
+    background-color: #01329e;
+}
+
+.navBarStyle{
+    background-color: #01329e;
+
+}
+.logoStyle{
+    padding-left: 30px;
+    padding-right: 15px;
+}
+.navTextStyle{
+    color: white;
+    font-weight: 500;
+    padding-right: 20px;
+    padding-bottom: 2px;
+}
+.navPageHeading{
+    color: white;
+    font-weight: 600;
+    font-size: 22px;
+   padding-right: 25px;
+}

@@ -3,7 +3,7 @@ import {useHistory} from "react-router";
 import './Administrator.css';
 import axios from 'axios';
 import { Button, Form, Row, Col, Container, Alert } from 'react-bootstrap';
-
+import { useForm } from 'react-hook-form';
 
 
 function Administrator(){
@@ -18,28 +18,31 @@ function Administrator(){
     
     const [contactNumber,setContactNumber] = useState('');
 
-    
+
+    const {
+        formState,
+        register,
+        handleSubmit,
+        formState: { errors }
+    } = useForm();
 
 
-    function putUserPhone(e){
-        e.preventDefault();
-        console.log(driverIDPhone);
-        console.log(contactNumber);
-      
-        const formData = {
-          contactNumber,
-        };
-        const endpointURL = `http://localhost:8080/drivers/?id=${driverIDPhone}&contactNumber=${contactNumber}`;
-    
-        if(contactNumber.length === 11){
-          axios.put(endpointURL, formData)
-            .then((response)=>{console.log(response)})
-            .catch((err)=>{console.log(err)});
-            window.alert(`Contact Number for Driver ${driverIDPhone} Successfully Changed.`);
-        }else{
-          window.alert("Phone number must be 11 digits");
-        }
-      }
+    const onSubmit = (data, e) => {
+        console.log("Submit event", e);
+        console.log(data);
+
+        const endpointURL = `http://localhost:8080/drivers/?id=${data.id}&contactNumber=${data.contactNumber}`;
+        axios.put(endpointURL, data)
+            .then(response => console.log(response.data))
+            .catch(err => console.log());
+        //setTimeout(() => window.location.reload(), 1000);
+        window.alert(`Contact Number for Driver ${data.id} Successfully Changed to ${data.contactNumber}`);
+        window.location.reload(false);
+
+    };
+
+
+
 
 
     function getUserDelete(e){
@@ -96,6 +99,8 @@ function Administrator(){
             }
           }
 
+
+
 return(
 <main className="page admin-page">
     <section className="admin-page dark">
@@ -148,29 +153,41 @@ return(
       <AlertDismissibleExample /></Col></Row>
         
   
-        <Row>
-        <Col xs={12}>
-        <section className="admin-panel-layout">
-                <fieldset>
-                <h3 className="section-heading">Update Driver Contact Number</h3>
-        <Form>
-            <Col sm={5}>
-      <Form.Group className="mb-3" controlId="formUserID">
-        <Form.Label>Driver ID:</Form.Label>
-        <Form.Control type="text" placeholder="Driver ID" onChange={e=>setPhoneID(e.target.value)}/>
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="formUserID">
-        <Form.Label>Phone Number: </Form.Label>
-        <Form.Control type="number" placeholder="Phone Number" onChange={e=>setContactNumber(e.target.value)}/>
-      </Form.Group>
-      </Col>
-      <Button variant="primary" type="submit" onClick={putUserPhone}>
-        Update
-      </Button>
-      </Form>
-      </fieldset></section>
-      
-        </Col></Row></div>
+
+
+
+                <Row>
+                    <Col xs={12}>
+                        <section className="admin-panel-layout">
+                            <fieldset>
+                                <h3 className="section-heading">Update Driver Contact Number</h3>
+                                <Form onSubmit={handleSubmit(onSubmit)}>
+                                    <Col sm={5}>
+                                        <Form.Group className="mb-3" controlId="phoneDriverID">
+                                            <Form.Label>Driver ID:</Form.Label>
+                                            <Form.Control type="text" placeholder="Driver ID" {...register('id')}/>
+                                        </Form.Group>
+                                        <Form.Group className="mb-3" controlId="newDriverNum">
+                                            <Form.Label>Phone Number: </Form.Label>
+                                            <Form.Control type="number" placeholder="Phone Number" {...register('contactNumber', {
+                                                required: '*Required',
+                                                pattern: {
+                                                    value: /^\d{11}$/,
+                                                    message: 'Please enter a valid phone number of 11 digits',
+                                                },
+                                            })}/>
+                                            <div className="invalidInput"><p>{formState.errors.contactNumber && formState.errors.contactNumber.message}</p></div>
+                                        </Form.Group>
+                                    </Col>
+                                    <Button variant="primary" type="submit">
+                                        Update
+                                    </Button>
+                                </Form>
+                            </fieldset></section>
+
+                    </Col></Row>
+
+            </div>
         
     </Row>
   
