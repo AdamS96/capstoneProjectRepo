@@ -5,7 +5,7 @@ import { Button, Form, Row, Col, Container } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import {useHistory} from "react-router";
 import SERVER_URL from '../../utils/constans';
-
+import { toast } from 'react-toastify';
 function InputDetails() {
     let history = useHistory();
     const {
@@ -22,8 +22,11 @@ function InputDetails() {
         axios.post(endpointURL, data)
             .then(response => console.log(response.data))
             .catch(err => console.log());
-            window.alert(`Success!`);
-            window.location.reload(false);
+            toast.success("Your quote has been successfully submitted!",{
+                onClose: () => window.location.reload(false),
+        })
+          //  window.alert(`Success!`);
+           // window.location.reload(false);
     };
 
 

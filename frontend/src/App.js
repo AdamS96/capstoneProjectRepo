@@ -6,6 +6,8 @@ import UpdateDetails from './components/UpdateDetails/UpdateDetails';
 import ReadDriver from './components/ReadDriver/ReadDriver';
 import React from 'react'
 import NavBar from "./components/NavBar/NavBar";
+import {ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   
@@ -16,6 +18,19 @@ function App() {
       <BrowserRouter>
         <div className="App">
         <NavBar/>
+          <ToastContainer
+              position="top-center"
+              autoClose={3000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+          />
+
+
           <div>
             <Route exact path="/" component={InputDetails} />
           </div>

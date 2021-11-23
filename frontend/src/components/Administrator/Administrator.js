@@ -22,7 +22,7 @@ function Administrator() {
 
     } = useForm();
 
-    const onSubmit = (data, e) => {
+    const onSubmitNumber = (data, e) => {
         console.log("Submit event", e);
         console.log(data);
         const endpointURL = `${SERVER_URL}/drivers/?id=${data.id}&contactNumber=${data.contactNumber}`;
@@ -147,12 +147,22 @@ function Administrator() {
                                     <section className="admin-panel-layout">
                                         <fieldset>
                                             <h3 className="section-heading">Update Driver Contact Number</h3>
-                                            <Form onSubmit={handleSubmit(onSubmit)}>
+                                            <Form onSubmit={handleSubmit(onSubmitNumber)}>
                                                 <Col sm={5}>
                                                     <Form.Group className="mb-3" controlId="phoneDriverID">
                                                         <Form.Label>Driver ID:</Form.Label>
-                                                        <Form.Control type="text"
-                                                                      placeholder="Driver ID" {...register('id')}/>
+                                                        <Form.Control type="number"
+                                                                      placeholder="Driver ID"
+                                                                      {...register('id', {
+                                                                          required: '*Required',
+                                                                          pattern: {
+                                                                              value: /^[0-9]*$/,
+                                                                              message: 'Please only enter numeric values',
+                                                                          },
+                                                                      })}/>
+                                                        <div className="invalidInput">
+                                                            <p>{formState.errors.id && formState.errors.id.message}</p>
+                                                        </div>
                                                     </Form.Group>
 
                                                     <Form.Group className="mb-3" controlId="newDriverNum">
