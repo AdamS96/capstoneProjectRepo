@@ -4,7 +4,7 @@ import axios from 'axios';
 import { Button, Form, Row, Col, Container } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import {useHistory} from "react-router";
-
+import SERVER_URL from '../../utils/constans';
 
 function InputDetails() {
     let history = useHistory();
@@ -18,7 +18,7 @@ function InputDetails() {
     const onSubmit = (data, e) => {
         console.log("Submit event", e);
         console.log(data);
-        const endpointURL = "http://localhost:8080/drivers";
+        const endpointURL = `${SERVER_URL}/drivers`;
         axios.post(endpointURL, data)
             .then(response => console.log(response.data))
             .catch(err => console.log());

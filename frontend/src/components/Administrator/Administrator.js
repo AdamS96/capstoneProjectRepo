@@ -4,6 +4,7 @@ import './Administrator.css';
 import axios from 'axios';
 import {Button, Form, Row, Col, Container, Alert} from 'react-bootstrap';
 import {useForm} from 'react-hook-form';
+import SERVER_URL from '../../utils/constans';
 
 
 function Administrator() {
@@ -24,7 +25,7 @@ function Administrator() {
     const onSubmit = (data, e) => {
         console.log("Submit event", e);
         console.log(data);
-        const endpointURL = `http://localhost:8080/drivers/?id=${data.id}&contactNumber=${data.contactNumber}`;
+        const endpointURL = `${SERVER_URL}/drivers/?id=${data.id}&contactNumber=${data.contactNumber}`;
         axios.put(endpointURL, data)
             .then(response => console.log(response.data))
             .catch(err => console.log());
@@ -36,7 +37,7 @@ function Administrator() {
         e.preventDefault();
         console.log(ID);
         setShow(true);
-        const endpointURL = `http://localhost:8080/drivers/id?id=${ID}`;
+        const endpointURL = `${SERVER_URL}/drivers/id?id=${ID}`;
         axios.get(endpointURL)
             .then((response) => {
                 console.log(response.data);
@@ -71,7 +72,7 @@ function Administrator() {
 
     function deleteUser() {
         if (tableData) {
-            const endpointURL = `http://localhost:8080/drivers/id?id=${ID}`;
+            const endpointURL = `${SERVER_URL}/drivers/id?id=${ID}`;
             axios.delete(endpointURL)
                 .then(() => {
                     window.alert(`Driver ${ID} Successfully Deleted`)

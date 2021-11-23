@@ -4,6 +4,7 @@ import './ReadDriver.css';
 import axios from 'axios';
 import {useParams} from "react-router";
 import {Link} from 'react-router-dom';
+import SERVER_URL from '../../utils/constans';
 
 
 function ReadDriver() {
@@ -12,7 +13,7 @@ function ReadDriver() {
     let {name} = useParams();
 
     const callMockAPIWithAxiosGET = () => {
-        const endpointURL = `http://localhost:8080/drivers/id?id=${name}`;
+        const endpointURL = `${SERVER_URL}/drivers/id?id=${name}`;
         axios.get(endpointURL)
             .then(response => setDriverData(response.data));
     };
