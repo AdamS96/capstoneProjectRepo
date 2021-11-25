@@ -313,7 +313,7 @@ function InputDetails() {
                                                             message: 'Please select between 1-4 additional drivers',
                                                         },
                                                     })}>
-                                                    <option style={{ display: 'none' }} value="">Select Addditional Drivers</option>
+                                                    <option style={{ display: 'none' }} value="">Select Additional Drivers</option>
                                                     <option value="1">1</option>
                                                     <option value="2">2</option>
                                                     <option value="3">3</option>
