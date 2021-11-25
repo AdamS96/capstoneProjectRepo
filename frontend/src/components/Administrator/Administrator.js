@@ -6,6 +6,7 @@ import {Button, Form, Row, Col, Container, Alert} from 'react-bootstrap';
 import {useForm} from 'react-hook-form';
 import SERVER_URL from '../../utils/constans';
 import {Link} from "react-router-dom";
+import {toast} from "react-toastify";
 
 
 function Administrator() {
@@ -28,10 +29,39 @@ function Administrator() {
         console.log(data);
         const endpointURL = `${SERVER_URL}/drivers/?id=${data.id}&contactNumber=${data.contactNumber}`;
         axios.put(endpointURL, data)
-            .then(response => console.log(response.data))
-            .catch(err => console.log());
-        window.alert(`Contact Number for Driver ${data.id} Successfully Changed to ${data.contactNumber}`);
-        window.location.reload(false);
+
+            .then((response) => {
+                console.log(response)
+
+                if (response.status >= 200 && response.status < 300){
+                    toast.success(`Contact Number for Driver ${data.id} Successfully Changed to ${data.contactNumber}`,{
+                        onClose: () => window.location.reload(false),
+                    })
+                }
+            })
+
+            .catch(function (error) {
+                if (error.response) {
+                    console.log(error.response.data);
+                    console.log(error.response.status);
+                    console.log(error.response.headers);
+                } else if (error.request) {
+                    console.log(error.request);
+                } else {
+                    console.log("Error", error.message);
+                }
+                toast.error("Oops, something went wrong!")
+                console.log(error.config);
+            });
+
+
+
+
+
+        //     .then(response => console.log(response.data))
+        //     .catch(err => console.log());
+        // window.alert(`Contact Number for Driver ${data.id} Successfully Changed to ${data.contactNumber}`);
+        // window.location.reload(false);
     };
 
     function getUserDelete(e) {
@@ -75,13 +105,42 @@ function Administrator() {
         if (tableData) {
             const endpointURL = `${SERVER_URL}/drivers/id?id=${ID}`;
             axios.delete(endpointURL)
-                .then(() => {
-                    window.alert(`Driver ${ID} Successfully Deleted`)
-                    setTimeout(() => window.location.reload(), 1000);
+
+                .then((response) => {
+                    console.log(response)
+
+                    if (response.status >= 200 && response.status < 300){
+                        toast.success(`Driver ${ID} Successfully Deleted`,{
+                            onClose: () => window.location.reload(false),
+                        })
+                    }
                 })
-                .catch((err) => {
-                    console.log(err)
+
+                .catch(function (error) {
+                    if (error.response) {
+                        console.log(error.response.data);
+                        console.log(error.response.status);
+                        console.log(error.response.headers);
+                    } else if (error.request) {
+                        console.log(error.request);
+                    } else {
+                        console.log("Error", error.message);
+                    }
+                    toast.error("Oops, something went wrong!")
+                    console.log(error.config);
                 });
+
+
+
+
+
+                // .then(() => {
+                //     window.alert(`Driver ${ID} Successfully Deleted`)
+                //     setTimeout(() => window.location.reload(), 1000);
+                // })
+                // .catch((err) => {
+                //     console.log(err)
+                // });
         }
     }
 

@@ -38,39 +38,26 @@ public class DriverController {
     @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/drivers/id")
     Optional<Driver> getSingleDriver(@RequestParam Long id) {
-        try {
+
             return service.getSingleDriver(id);
-        } catch (NoSuchElementException noSuchElementException) {
-            throw new ResponseStatusException(
-                    HttpStatus.NOT_FOUND, ID_NOT_FOUND_ERROR_MSG + id, noSuchElementException);
         }
-    }
+
 
     @CrossOrigin(origins = "http://localhost:3000")
     @DeleteMapping("/drivers/id")
     void deleteSingleDriver(@RequestParam Long id) {
-        try {
+
             service.deleteSingleDriver(id);
-        }
-        catch (NoSuchElementException noSuchElementException) {
-            throw new ResponseStatusException(
-                    HttpStatus.NOT_FOUND, ID_NOT_FOUND_ERROR_MSG + id, noSuchElementException);
-        }
-        service.deleteSingleDriver(id);
+
     }
 
 
     @CrossOrigin(origins = "http://localhost:3000")
     @PutMapping("/drivers/")
     void updateContactNumber(@RequestParam Long id, @RequestParam String contactNumber) {
-        try {
-            service.updateNumber(id, contactNumber);
-        }catch (NoSuchElementException noSuchElementException) {
-            throw new ResponseStatusException(
-                    HttpStatus.NOT_FOUND, ID_NOT_FOUND_ERROR_MSG + id, noSuchElementException);
-        }
 
-    }
+            service.updateNumber(id, contactNumber);
+        }
 
 
 
