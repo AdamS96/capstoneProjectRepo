@@ -1,0 +1,120 @@
+.ReadAllDrivers {
+    width: 75%;
+    margin: 10px auto;
+    background-color: #f6f6f6;
+}
+.ReadAllDrivers .fieldset{
+    margin: 2em 0;
+    padding: 1em 2em;
+    border: solid 1px #ccc;
+    border-radius: 6px;
+    min-width: 200px;
+    width: 850px;
+}
+
+.ReadAllDrivers .legend{
+    font-size: 1.25em;
+    padding: 0 .25em 0;
+    color: #999;
+}
+
+.readAllDrivers-page .readAllDrivers-panel{
+    padding: 35px 35px 25px;
+}
+
+.readAllDrivers-page .dark{
+    background-color: #f6f6f6;
+    height: 1500px;
+}
+
+.readAllDrivers-page .content{
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);
+    background-color: white;
+}
+.readAllDrivers-page .block-heading{
+    padding-top: 50px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.readAllDrivers-page .block-heading p{
+    text-align: left;
+    max-width: 420px;
+    margin-bottom: 20px;
+
+    opacity:0.7;
+}
+
+.readAllDrivers-page .block-heading p{
+    opacity:0.8;
+}
+
+.readAllDrivers-page .block-heading h1,
+.readAllDriverspage .block-heading h2,
+.readAllDrivers-page .block-heading h3 {
+    margin-bottom:1.2rem;
+    color: #01329e;
+}
+
+.readAllDrivers-panel .section-heading{
+    font-size: 1em;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    margin-bottom: 0.8em;
+    font-weight: 600;
+    padding-bottom: 8px;
+}
+
+.readAllDrivers-panel{
+    background-color: white;
+    margin-bottom:250px;
+    border-top: 2px solid #01329e;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);
+    padding: 0;
+
+}
+
+.readAllDrivers-panel .readAllDrivers-panel-layout{
+    padding-bottom: 30px;
+}
+
+
+.readAllDrivers-page .readAllDrivers-panel button{
+    margin-top: 0.6em;
+    padding:12px 5;
+    font-weight: 500;
+    background-color: #01329e;
+    border: #01329e;
+    margin-bottom: 5px;
+    margin-left: 2px;
+}
+.readAllDrivers-page .block-heading h1,
+.readAllDrivers-page .block-heading h2,
+.readAllDrivers-page .block-heading h3 {
+    margin-bottom:1.2rem;
+    color: #01329e;
+}
+
+.readAllDrivers-page label{
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #79818a;
+
+}
+.invalidInput{
+    color: red;
+    font-size: 13px;
+    padding-top: 5px;
+    font-weight: 500;
+}
+.form-control::placeholder { /* Most modern browsers support this now. */
+    font-size: 14px;
+}
+.alerttext{
+    color: white;
+}
+
+.readAllDrivers-page .container{
+    max-width: 2000px;
+
+}
