@@ -5,6 +5,7 @@ import axios from 'axios';
 import {Button, Form, Row, Col, Container, Alert} from 'react-bootstrap';
 import {useForm} from 'react-hook-form';
 import SERVER_URL from '../../utils/constans';
+import {Link} from "react-router-dom";
 
 
 function Administrator() {
@@ -113,6 +114,9 @@ function Administrator() {
                                                 <Button type="submit" onClick={() => {
                                                     history.push(`../readdriver/${driverID}`)
                                                 }}>Search</Button>
+                                                <Link to="../readalldrivers">
+                                                    <Button type="submit">View All</Button>
+                                                </Link>
                                             </Form>
                                         </fieldset>
                                     </section>

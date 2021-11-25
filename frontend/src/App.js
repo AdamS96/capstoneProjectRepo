@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Administrator from './components/Administrator/Administrator';
 import UpdateDetails from './components/UpdateDetails/UpdateDetails';
 import ReadDriver from './components/ReadDriver/ReadDriver';
+import ReadAllDrivers from "./components/ReadAllDrivers/ReadAllDrivers";
 import React from 'react'
 import NavBar from "./components/NavBar/NavBar";
 import {ToastContainer} from 'react-toastify';
@@ -42,6 +43,9 @@ function App() {
           </div>     
           <div>
             <Route exact path="/readDriver/:name" component={ReadDriver} />
+          </div>
+          <div>
+            <Route exact path="/readalldrivers" component={ReadAllDrivers} />
           </div>
 
         </div>

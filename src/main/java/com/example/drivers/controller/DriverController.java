@@ -59,6 +59,7 @@ public class DriverController {
         service.deleteSingleDriver(id);
     }
 
+
     @CrossOrigin(origins = "http://localhost:3000")
     @PutMapping("/drivers/")
     void updateContactNumber(@RequestParam Long id, @RequestParam String contactNumber) {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './InputDetails.css';
 import axios from 'axios';
 import { Button, Form, Row, Col, Container } from 'react-bootstrap';
@@ -8,6 +8,7 @@ import SERVER_URL from '../../utils/constans';
 import { toast } from 'react-toastify';
 function InputDetails() {
     let history = useHistory();
+    const [driverID, setDriverID] = useState('');
     const {
         formState,
         register,
@@ -15,18 +16,83 @@ function InputDetails() {
         formState: { errors }
     } = useForm();
 
+
+    // const handleRegistration = (data) => {
+    //     console.log(data);
+    //     const url = "/api/drivers";
+    //     axios
+    //         .post(url, data)
+    //         .then((response) => {
+    //             console.log(response)
+    //             let id = response.data.id;
+    //             if (response.status >= 200 && response.status < 300){
+    //                 toast.success("Thanks, your quote has been submitted!", {
+    //                     onClose: () => history.push(`/driver-details/${id}`),
+    //                 })
+    //             }
+    //         })
+    //         .catch(function (error) {
+    //             if (error.response) {
+    //                 console.log(error.response.data);
+    //                 console.log(error.response.status);
+    //                 console.log(error.response.headers);
+    //             } else if (error.request) {
+    //                 console.log(error.request);
+    //             } else {
+    //                 console.log("Error", error.message);
+    //             }
+    //             toast.error("Oops, something went wrong!")
+    //             console.log(error.config);
+    //         });
+    // };
+
+    // const onSubmit = (data, e) => {
+    //     console.log("Submit event", e);
+    //     console.log(data);
+    //     const endpointURL = `${SERVER_URL}/drivers`;
+    //     axios.post(endpointURL, data)
+    //         .then(response => console.log(response.data))
+    //
+    //         .catch(err => console.log());
+    //         toast.success("Your quote has been successfully submitted!",{
+    //             onClose: () => history.push(`../readdriver/${data.id}`),
+    //     })
+    //       //  window.alert(`Success!`);
+    //        // window.location.reload(false);
+    // };
+
     const onSubmit = (data, e) => {
         console.log("Submit event", e);
         console.log(data);
         const endpointURL = `${SERVER_URL}/drivers`;
         axios.post(endpointURL, data)
-            .then(response => console.log(response.data))
-            .catch(err => console.log());
-            toast.success("Your quote has been successfully submitted!",{
-                onClose: () => window.location.reload(false),
-        })
-          //  window.alert(`Success!`);
-           // window.location.reload(false);
+            .then((response) => {
+                console.log(response)
+                let id = response.data.id;
+                if (response.status >= 200 && response.status < 300){
+                    toast.success("Your quote has been successfully submitted!",{
+                        onClose: () => history.push(`../readdriver/${id}`),
+                    })
+                }
+            })
+
+            .catch(function (error) {
+                if (error.response) {
+                    console.log(error.response.data);
+                    console.log(error.response.status);
+                    console.log(error.response.headers);
+                } else if (error.request) {
+                    console.log(error.request);
+                } else {
+                    console.log("Error", error.message);
+                }
+                toast.error("Oops, something went wrong!")
+                console.log(error.config);
+            });
+
+
+        //  window.alert(`Success!`);
+        // window.location.reload(false);
     };
 
 
@@ -309,11 +375,12 @@ function InputDetails() {
                                                     {...register('additionalDrivers', {
                                                         required: '*Required',
                                                         min: {
-                                                            value: 1,
+                                                            value: 0,
                                                             message: 'Please select between 1-4 additional drivers',
                                                         },
                                                     })}>
                                                     <option style={{ display: 'none' }} value="">Select Additional Drivers</option>
+                                                    <option value="0">0</option>
                                                     <option value="1">1</option>
                                                     <option value="2">2</option>
                                                     <option value="3">3</option>

@@ -83,6 +83,7 @@ legend{
 	font-weight: 500;
 	background-color: #01329e;
 	border: #01329e;
+    margin-right: 20px;
 }
 .admin-page .block-heading h1,
 .admin-page .block-heading h2,
