@@ -14,14 +14,7 @@ public class DisplayDrivers {
 
         for(Driver driver : driverList){
 
-//        System.out.println(
-//                driver.getPrefix() + driver.getFirstName() + driver.getLastName() + driver.getContactNumber() +
-//                driver.getAddressLine1() + driver.getAddressLine2() + driver.getCity() + driver.getPostcode() +
-//                driver.getVehicleType() + driver.getEngineSize() + driver.getAdditionalDrivers() +
-//                driver.getUsedCommercialPurposes() + driver.getUsedOutsideState() + driver.getCurrentVehicleValue() +
-//                driver.getDateVehicleRegistered() + driver.getQuoteAmount());
-//    }
-    System.out.printf("%-10.10s %-15.15s %-15.15s %-20.20s %-25.25s %-25.25s %-20.20s %-15.15s %-15.15s %-15.15s %-20.20s %-15.15s %-25.25s %-15.15s %-20.20s %.2f %n",
+         System.out.printf("%-10.10s %-15.15s %-15.15s %-20.20s %-25.25s %-25.25s %-20.20s %-15.15s %-15.15s %-15.15s %-20.20s %-15.15s %-25.25s %-15.15s %-20.20s %.2f %n",
                 driver.getPrefix(), driver.getFirstName(), driver.getLastName(), driver.getContactNumber(),
                 driver.getAddressLine1(), driver.getAddressLine2(), driver.getCity(), driver.getPostcode(),
                 driver.getVehicleType(), driver.getEngineSize(), driver.getAdditionalDrivers(),

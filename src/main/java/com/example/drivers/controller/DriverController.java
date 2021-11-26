@@ -17,7 +17,6 @@ public class DriverController {
 
 
     private final DriverService service;
-    public static final String ID_NOT_FOUND_ERROR_MSG = "Driver does not exist with ID: ";
 
     public DriverController(DriverService service){
         this.service = service;
