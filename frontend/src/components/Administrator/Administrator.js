@@ -21,7 +21,6 @@ function Administrator() {
         formState,
         register,
         handleSubmit,
-
     } = useForm();
 
     const onSubmitNumber = (data, e) => {
@@ -29,17 +28,14 @@ function Administrator() {
         console.log(data);
         const endpointURL = `${SERVER_URL}/drivers/?id=${data.id}&contactNumber=${data.contactNumber}`;
         axios.put(endpointURL, data)
-
             .then((response) => {
                 console.log(response)
-
                 if (response.status >= 200 && response.status < 300){
                     toast.success(`Contact Number for Driver ${data.id} Successfully Changed to ${data.contactNumber}`,{
                         onClose: () => window.location.reload(false),
                     })
                 }
             })
-
             .catch(function (error) {
                 if (error.response) {
                     console.log(error.response.data);
@@ -67,12 +63,18 @@ function Administrator() {
     function getUserDelete(e) {
         e.preventDefault();
         console.log(ID);
-        setShow(true);
         const endpointURL = `${SERVER_URL}/drivers/id?id=${ID}`;
         axios.get(endpointURL)
             .then((response) => {
                 console.log(response.data);
-                setTableData(response.data);
+                if (response.data == null){
+                    toast.error(`Error! Driver ${ID} Does Not Exist`,{
+                        onClose: () => window.location.reload(false),
+                    })
+                }else{
+                    setShow(true);
+                    setTableData(response.data);
+                }
             })
     }
 
@@ -100,6 +102,8 @@ function Administrator() {
         }
         return null;
     }
+
+
 
     function deleteUser() {
         if (tableData) {

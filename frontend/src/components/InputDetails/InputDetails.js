@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './InputDetails.css';
 import axios from 'axios';
 import { Button, Form, Row, Col, Container } from 'react-bootstrap';
@@ -8,7 +8,6 @@ import SERVER_URL from '../../utils/constans';
 import { toast } from 'react-toastify';
 function InputDetails() {
     let history = useHistory();
-    const [driverID, setDriverID] = useState('');
     const {
         formState,
         register,
@@ -75,7 +74,6 @@ function InputDetails() {
                     })
                 }
             })
-
             .catch(function (error) {
                 if (error.response) {
                     console.log(error.response.data);
@@ -448,7 +446,7 @@ function InputDetails() {
                                     </Form.Group>
                                 </Col>
                             </Row>
-                            <h3 className="section-heading"></h3>
+                            <h3 className="section-heading"> </h3>
                             <Col sm={12}>
                                 <Button type="submit">Submit</Button>
                             </Col>

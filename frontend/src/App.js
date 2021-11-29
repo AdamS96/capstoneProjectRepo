@@ -2,7 +2,6 @@ import {BrowserRouter, Route} from 'react-router-dom';
 import InputDetails from './components/InputDetails/InputDetails';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Administrator from './components/Administrator/Administrator';
-import UpdateDetails from './components/UpdateDetails/UpdateDetails';
 import ReadDriver from './components/ReadDriver/ReadDriver';
 import ReadAllDrivers from "./components/ReadAllDrivers/ReadAllDrivers";
 import React from 'react'
@@ -11,8 +10,6 @@ import {ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
-  
-
 
   return (
 <div>
@@ -30,8 +27,6 @@ function App() {
               draggable
               pauseOnHover
           />
-
-
           <div>
             <Route exact path="/" component={InputDetails} />
           </div>
@@ -39,21 +34,14 @@ function App() {
             <Route exact path="/administrator" component={Administrator} />
           </div>
           <div>
-            <Route exact path="/updatedetails" component={UpdateDetails} />
-          </div>     
-          <div>
             <Route exact path="/readDriver/:name" component={ReadDriver} />
           </div>
           <div>
             <Route exact path="/readalldrivers" component={ReadAllDrivers} />
           </div>
-
         </div>
-
       </BrowserRouter>
     </div>
-
   );
-
   }
 export default App;
