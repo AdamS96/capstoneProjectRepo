@@ -81,7 +81,6 @@ function ReadDriver() {
                                         <p>Quoted Insurance Price: <span
                                             className="spantext">£{Number(driverData.quoteAmount).toFixed(2)}</span></p>
                                     </div>
-
                                     <div className="buttonFormat">
                                         <Link to="/administrator">
                                             <Button type="submit">Admin Page</Button>
