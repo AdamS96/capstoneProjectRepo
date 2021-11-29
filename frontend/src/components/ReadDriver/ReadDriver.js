@@ -21,7 +21,7 @@ function ReadDriver() {
     useEffect(() => {
         callAPIWithAxiosGET();
     }, []);
-    
+
 
     return (
         <main className="page user-details">
@@ -40,8 +40,11 @@ function ReadDriver() {
                                     <h2 className="section-heading">User Details</h2>
                                     <div className="userdetailFormat">
                                         <p>Driver ID: <span className="spantext">{driverData.id}</span></p>
-                                        <p>Driver Name: <span className="spantext">{driverData.prefix} {driverData.firstName} {driverData.lastName}</span></p>
-                                        <p>Contact Number: <span className="spantext">{driverData.contactNumber}</span></p>
+                                        <p>Driver Name: <span
+                                            className="spantext">{driverData.prefix} {driverData.firstName} {driverData.lastName}</span>
+                                        </p>
+                                        <p>Contact Number: <span className="spantext">{driverData.contactNumber}</span>
+                                        </p>
                                     </div>
 
                                     <h2 className="section-heading">Address</h2>
@@ -55,21 +58,28 @@ function ReadDriver() {
                                     <h2 className="section-heading">Vehicle Details</h2>
                                     <div className="vechicledetailFormat">
                                         <p>Vehicle Type: <span className="spantext">{driverData.vehicleType}</span></p>
-                                        <p>Engine Size: <span className="spantext">{driverData.engineSize} (CC)</span></p>
-                                        <p>Current Value: <span className="spantext">£{driverData.currentVehicleValue}</span></p>
-                                        <p>Date Registered: <span className="spantext">{driverData.dateVehicleRegistered}</span></p>
+                                        <p>Engine Size: <span className="spantext">{driverData.engineSize} (CC)</span>
+                                        </p>
+                                        <p>Current Value: <span
+                                            className="spantext">£{driverData.currentVehicleValue}</span></p>
+                                        <p>Date Registered: <span
+                                            className="spantext">{driverData.dateVehicleRegistered}</span></p>
                                     </div>
 
                                     <h2 className="section-heading">Policy Details</h2>
                                     <div className="policydetailFormat">
-                                        <p>Number of Addditional Drivers: <span className="spantext">{driverData.additionalDrivers}</span></p>
-                                        <p>Used for Commercial Purposes: <span className="spantext">{driverData.usedCommercialPurposes}</span></p>
-                                        <p>Used Outside State: <span className="spantext">{driverData.usedOutsideState}</span></p>
+                                        <p>Number of Addditional Drivers: <span
+                                            className="spantext">{driverData.additionalDrivers}</span></p>
+                                        <p>Used for Commercial Purposes: <span
+                                            className="spantext">{driverData.usedCommercialPurposes}</span></p>
+                                        <p>Used Outside State: <span
+                                            className="spantext">{driverData.usedOutsideState}</span></p>
                                     </div>
 
                                     <h2 className="section-heading">Quoted Insurance Price</h2>
                                     <div className="quoteFormat">
-                                        <p>Quoted Insurance Price: <span className="spantext">£{Number(driverData.quoteAmount).toFixed(2)}</span></p>
+                                        <p>Quoted Insurance Price: <span
+                                            className="spantext">£{Number(driverData.quoteAmount).toFixed(2)}</span></p>
                                     </div>
 
                                     <div className="buttonFormat">

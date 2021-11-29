@@ -18,19 +18,19 @@ public class DriverController {
 
     private final DriverService service;
 
-    public DriverController(DriverService service){
+    public DriverController(DriverService service) {
         this.service = service;
     }
 
     @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/drivers")
-    List<Driver> getAllDrivers(){
+    List<Driver> getAllDrivers() {
         return service.getAllDrivers();
     }
 
     @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping("/drivers")
-    Driver save(@RequestBody Driver driver){
+    Driver save(@RequestBody Driver driver) {
         return service.save(driver);
     }
 
@@ -38,15 +38,15 @@ public class DriverController {
     @GetMapping("/drivers/id")
     Optional<Driver> getSingleDriver(@RequestParam Long id) {
 
-            return service.getSingleDriver(id);
-        }
+        return service.getSingleDriver(id);
+    }
 
 
     @CrossOrigin(origins = "http://localhost:3000")
     @DeleteMapping("/drivers/id")
     void deleteSingleDriver(@RequestParam Long id) {
 
-            service.deleteSingleDriver(id);
+        service.deleteSingleDriver(id);
 
     }
 
@@ -55,9 +55,8 @@ public class DriverController {
     @PutMapping("/drivers/")
     void updateContactNumber(@RequestParam Long id, @RequestParam String contactNumber) {
 
-            service.updateNumber(id, contactNumber);
-        }
-
+        service.updateNumber(id, contactNumber);
+    }
 
 
 }

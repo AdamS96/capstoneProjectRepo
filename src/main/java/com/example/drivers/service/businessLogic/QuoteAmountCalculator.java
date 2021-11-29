@@ -13,7 +13,7 @@ import static com.example.drivers.service.businessLogic.VehicleValueFactor.calcu
 @Service
 public class QuoteAmountCalculator {
 
-    public void calculateInsuranceQuote(Driver driver){
+    public void calculateInsuranceQuote(Driver driver) {
 
         double typeFactor = calculateTypeFactor(driver.getVehicleType());
         double engineSizeFactor = calculateEngineSizeFactor(driver.getEngineSize());

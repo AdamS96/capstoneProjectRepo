@@ -19,16 +19,16 @@ public class DriverService {
     private final QuoteAmountCalculator quoteAmountCalculator;
     List<Driver> driverList = new ArrayList<>();
 
-    public DriverService(DriverRepository driverRepository, QuoteAmountCalculator quoteAmountCalculator){
+    public DriverService(DriverRepository driverRepository, QuoteAmountCalculator quoteAmountCalculator) {
         this.driverRepository = driverRepository;
         this.quoteAmountCalculator = quoteAmountCalculator;
     }
 
-    public List<Driver> getAllDrivers(){
+    public List<Driver> getAllDrivers() {
         return driverRepository.findAll();
     }
 
-    public Driver save(Driver driver){
+    public Driver save(Driver driver) {
         quoteAmountCalculator.calculateInsuranceQuote(driver);
         driverList.add(driver);
         DisplayDrivers.displayDrivers(driverList);
@@ -49,7 +49,7 @@ public class DriverService {
                 .map(recordForUpdating -> {
                     recordForUpdating.setContactNumber(contactNumber);
                     return driverRepository.save(recordForUpdating);
-                }).orElseThrow(()-> new NoSuchElementException("No such driver"));
+                }).orElseThrow(() -> new NoSuchElementException("No such driver"));
     }
 
 

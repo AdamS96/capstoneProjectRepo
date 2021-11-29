@@ -2,21 +2,21 @@ package com.example.drivers.service.businessLogic;
 
 public class EngineSizeFactor {
 
-    public static double calculateEngineSizeFactor(String engineSize){
+    public static double calculateEngineSizeFactor(String engineSize) {
 
         double engineSizeFactor = 0.0;
 
-        if (engineSize.equalsIgnoreCase("1000")){
+        if (engineSize.equalsIgnoreCase("1000")) {
             return engineSizeFactor = 1.0;
-        } else if (engineSize.equalsIgnoreCase("1600")){
+        } else if (engineSize.equalsIgnoreCase("1600")) {
             return engineSizeFactor = 1.6;
-        } else if (engineSize.equalsIgnoreCase("2000")){
+        } else if (engineSize.equalsIgnoreCase("2000")) {
             return engineSizeFactor = 2.0;
-        } else if (engineSize.equalsIgnoreCase("2500")){
+        } else if (engineSize.equalsIgnoreCase("2500")) {
             return engineSizeFactor = 2.5;
-        } else if (engineSize.equalsIgnoreCase("3000")){
+        } else if (engineSize.equalsIgnoreCase("3000")) {
             return engineSizeFactor = 3.0;
-        } else if (engineSize.equalsIgnoreCase("Other")){
+        } else if (engineSize.equalsIgnoreCase("Other")) {
             return engineSizeFactor = 3.5;
         } else {
             throw new IllegalArgumentException("Invalid engine size");

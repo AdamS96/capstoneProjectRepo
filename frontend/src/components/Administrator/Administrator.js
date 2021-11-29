@@ -30,16 +30,16 @@ function Administrator() {
         axios.put(endpointURL, data)
             .then((response) => {
                 console.log(response)
-                if (response.status >= 200 && response.status < 300){
-                    toast.success(`Contact Number for Driver ${data.id} Successfully Changed to ${data.contactNumber}`,{
+                if (response.status >= 200 && response.status < 300) {
+                    toast.success(`Contact Number for Driver ${data.id} Successfully Changed to ${data.contactNumber}`, {
                         onClose: () => window.location.reload(false),
                     })
                 }
             })
             .catch((error) => {
-                    if(error.response.status === 404){
-                        toast.error(`Sorry, Driver ID ${data.id} does not exist.`)
-                    } else {
+                if (error.response.status === 404) {
+                    toast.error(`Sorry, Driver ID ${data.id} does not exist.`)
+                } else {
                     console.log("Error", error.message);
                 }
                 toast.error("Oops, something went wrong!")
@@ -54,11 +54,11 @@ function Administrator() {
         axios.get(endpointURL)
             .then((response) => {
                 console.log(response.data);
-                if (response.data == null){
-                    toast.error(`Error! Driver ${ID} Does Not Exist`,{
+                if (response.data == null) {
+                    toast.error(`Error! Driver ${ID} Does Not Exist`, {
                         onClose: () => window.location.reload(false),
                     })
-                }else{
+                } else {
                     setShow(true);
                     setTableData(response.data);
                 }
@@ -79,7 +79,6 @@ function Administrator() {
                             setShow(false);
                             deleteUser();
                         }}>Confirm</Button>
-
                         <Button onClick={() => {
                             setShow(false);
                         }}>Cancel</Button>
@@ -94,18 +93,16 @@ function Administrator() {
         if (tableData) {
             const endpointURL = `${SERVER_URL}/drivers/id?id=${ID}`;
             axios.delete(endpointURL)
-
                 .then((response) => {
                     console.log(response)
-
-                    if (response.status >= 200 && response.status < 300){
-                        toast.success(`Driver ${ID} Successfully Deleted`,{
+                    if (response.status >= 200 && response.status < 300) {
+                        toast.success(`Driver ${ID} Successfully Deleted`, {
                             onClose: () => window.location.reload(false),
                         })
                     }
                 })
                 .catch((error) => {
-                    if(error.response.status === 404){
+                    if (error.response.status === 404) {
                         toast.error(`Sorry, Driver ID ${ID} does not exist.`)
                     } else {
                         console.log("Error", error.message);

@@ -1,19 +1,20 @@
 package com.example.drivers.model;
 
 import net.bytebuddy.dynamic.loading.InjectionClassLoader;
+
 import javax.persistence.Entity;
 import javax.persistence.*;
 
-@Entity (name = "DRIVER_DETAILS")
+@Entity(name = "DRIVER_DETAILS")
 public class Driver {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    public Driver(Long id, String prefix, String firstName, String lastName, String contactNumber, String addressLine1,String addressLine2, String city, String postcode,
+    public Driver(Long id, String prefix, String firstName, String lastName, String contactNumber, String addressLine1, String addressLine2, String city, String postcode,
                   String vehicleType, String engineSize, String additionalDrivers, String usedCommercialPurposes, String usedOutsideState, String dateVehicleRegistered,
-                  String currentVehicleValue, double quoteAmount){
+                  String currentVehicleValue, double quoteAmount) {
 
         this.id = id;
         this.prefix = prefix;
@@ -34,6 +35,7 @@ public class Driver {
         this.quoteAmount = quoteAmount;
 
     }
+
     @Column
     private String prefix;
     private String firstName;
