@@ -15,51 +15,6 @@ function InputDetails() {
         formState: { errors }
     } = useForm();
 
-
-    // const handleRegistration = (data) => {
-    //     console.log(data);
-    //     const url = "/api/drivers";
-    //     axios
-    //         .post(url, data)
-    //         .then((response) => {
-    //             console.log(response)
-    //             let id = response.data.id;
-    //             if (response.status >= 200 && response.status < 300){
-    //                 toast.success("Thanks, your quote has been submitted!", {
-    //                     onClose: () => history.push(`/driver-details/${id}`),
-    //                 })
-    //             }
-    //         })
-    //         .catch(function (error) {
-    //             if (error.response) {
-    //                 console.log(error.response.data);
-    //                 console.log(error.response.status);
-    //                 console.log(error.response.headers);
-    //             } else if (error.request) {
-    //                 console.log(error.request);
-    //             } else {
-    //                 console.log("Error", error.message);
-    //             }
-    //             toast.error("Oops, something went wrong!")
-    //             console.log(error.config);
-    //         });
-    // };
-
-    // const onSubmit = (data, e) => {
-    //     console.log("Submit event", e);
-    //     console.log(data);
-    //     const endpointURL = `${SERVER_URL}/drivers`;
-    //     axios.post(endpointURL, data)
-    //         .then(response => console.log(response.data))
-    //
-    //         .catch(err => console.log());
-    //         toast.success("Your quote has been successfully submitted!",{
-    //             onClose: () => history.push(`../readdriver/${data.id}`),
-    //     })
-    //       //  window.alert(`Success!`);
-    //        // window.location.reload(false);
-    // };
-
     const onSubmit = (data, e) => {
         console.log("Submit event", e);
         console.log(data);
@@ -74,26 +29,11 @@ function InputDetails() {
                     })
                 }
             })
-            .catch(function (error) {
-                if (error.response) {
-                    console.log(error.response.data);
-                    console.log(error.response.status);
-                    console.log(error.response.headers);
-                } else if (error.request) {
-                    console.log(error.request);
-                } else {
-                    console.log("Error", error.message);
-                }
+            .catch((error) => {
                 toast.error("Oops, something went wrong!")
                 console.log(error.config);
             });
-
-
-        //  window.alert(`Success!`);
-        // window.location.reload(false);
     };
-
-
 
     return (
         <main className="page insurance-page">

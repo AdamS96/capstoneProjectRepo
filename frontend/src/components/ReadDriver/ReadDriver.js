@@ -12,14 +12,14 @@ function ReadDriver() {
     const [driverData, setDriverData] = useState([]);
     let {name} = useParams();
 
-    const callMockAPIWithAxiosGET = () => {
+    const callAPIWithAxiosGET = () => {
         const endpointURL = `${SERVER_URL}/drivers/id?id=${name}`;
         axios.get(endpointURL)
             .then(response => setDriverData(response.data));
     };
 
     useEffect(() => {
-        callMockAPIWithAxiosGET();
+        callAPIWithAxiosGET();
     }, []);
     
 

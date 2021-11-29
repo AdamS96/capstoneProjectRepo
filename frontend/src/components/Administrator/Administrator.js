@@ -36,28 +36,15 @@ function Administrator() {
                     })
                 }
             })
-            .catch(function (error) {
-                if (error.response) {
-                    console.log(error.response.data);
-                    console.log(error.response.status);
-                    console.log(error.response.headers);
-                } else if (error.request) {
-                    console.log(error.request);
-                } else {
+            .catch((error) => {
+                    if(error.response.status === 404){
+                        toast.error(`Sorry, Driver ID ${data.id} does not exist.`)
+                    } else {
                     console.log("Error", error.message);
                 }
                 toast.error("Oops, something went wrong!")
                 console.log(error.config);
             });
-
-
-
-
-
-        //     .then(response => console.log(response.data))
-        //     .catch(err => console.log());
-        // window.alert(`Contact Number for Driver ${data.id} Successfully Changed to ${data.contactNumber}`);
-        // window.location.reload(false);
     };
 
     function getUserDelete(e) {
@@ -103,8 +90,6 @@ function Administrator() {
         return null;
     }
 
-
-
     function deleteUser() {
         if (tableData) {
             const endpointURL = `${SERVER_URL}/drivers/id?id=${ID}`;
@@ -119,32 +104,15 @@ function Administrator() {
                         })
                     }
                 })
-
-                .catch(function (error) {
-                    if (error.response) {
-                        console.log(error.response.data);
-                        console.log(error.response.status);
-                        console.log(error.response.headers);
-                    } else if (error.request) {
-                        console.log(error.request);
+                .catch((error) => {
+                    if(error.response.status === 404){
+                        toast.error(`Sorry, Driver ID ${ID} does not exist.`)
                     } else {
                         console.log("Error", error.message);
                     }
                     toast.error("Oops, something went wrong!")
                     console.log(error.config);
                 });
-
-
-
-
-
-                // .then(() => {
-                //     window.alert(`Driver ${ID} Successfully Deleted`)
-                //     setTimeout(() => window.location.reload(), 1000);
-                // })
-                // .catch((err) => {
-                //     console.log(err)
-                // });
         }
     }
 
@@ -155,7 +123,6 @@ function Administrator() {
                 <Container>
                     <div className="block-heading">
                         <h2>Admin Panel</h2>
-                        <p></p>
                     </div>
                     <Row>
                         <div className="admin-panel">
@@ -176,6 +143,7 @@ function Administrator() {
                                                 </Col>
                                                 <Button type="submit" onClick={() => {
                                                     history.push(`../readdriver/${driverID}`)
+
                                                 }}>Search</Button>
                                                 <Link to="../readalldrivers">
                                                     <Button type="submit">View All</Button>

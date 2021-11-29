@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import './ReadAllDrivers.css';
-import {Button, Form, Row, Col, Container, Alert, Table} from 'react-bootstrap';
+import {Button, Row, Col, Container, Table} from 'react-bootstrap';
 import SERVER_URL from "../../utils/constans";
 import {useHistory} from "react-router";
 
@@ -11,8 +11,7 @@ function ReadAllDrivers(){
 
     const [tableData, setTableData] = useState([]);
     let history = useHistory();
-    function callMockApiWithAxiosGET() {
-
+    function callAPIWithAxiosGET() {
         const endpointURL = `${SERVER_URL}/drivers/`;
         axios.get(endpointURL)
             .then(response => setTableData(response.data))
@@ -22,7 +21,7 @@ function ReadAllDrivers(){
     }
 
     useEffect(() => {
-        callMockApiWithAxiosGET();
+        callAPIWithAxiosGET();
     }, []);
 
     return(
@@ -79,7 +78,7 @@ function ReadAllDrivers(){
                                                         )})}
                                                 </tbody>
                                             </Table>
-                                        <h3 className="section-heading"></h3>
+                                        <h3 className="section-heading"> </h3>
                                         <Link to="/administrator">
                                             <Button type="submit">Admin Page</Button>
                                         </Link>
