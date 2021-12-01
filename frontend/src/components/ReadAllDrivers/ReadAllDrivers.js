@@ -33,7 +33,7 @@ function ReadAllDrivers() {
                 <Container>
                     <div className="block-heading">
                         <h2>All Driver Records</h2>
-                        <p></p>
+
                     </div>
                     <Row>
                         <div className="readAllDrivers-panel">
@@ -79,7 +79,7 @@ function ReadAllDrivers() {
                                                 })}
                                             </tbody>
                                         </Table>
-                                        <h3 className="section-heading"></h3>
+                                        <h3 className="section-heading"> </h3>
                                         <Link to="/administrator">
                                             <Button type="submit">Admin Page</Button>
                                         </Link>
