@@ -29,10 +29,10 @@ function ReadDriver() {
                 <Container>
                     <div className="block-heading">
                         <h2>Driver Details</h2>
-                        <p></p>
+
                     </div>
                     <Row>
-                        <Col></Col>
+                        <Col> </Col>
                         <Col xs={12}>
                             <section className="user-content">
                                 <fieldset>
@@ -90,7 +90,7 @@ function ReadDriver() {
                                 </fieldset>
                             </section>
                         </Col>
-                        <Col></Col>
+                        <Col> </Col>
                     </Row>
                 </Container>
             </section>

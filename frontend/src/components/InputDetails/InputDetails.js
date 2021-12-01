@@ -417,7 +417,7 @@ function InputDetails() {
                                     </Form.Group>
                                 </Col>
                             </Row>
-                            <h3 className="section-heading"></h3>
+                            <h3 className="section-heading"> </h3>
                             <Col sm={12}>
                                 <Button type="submit">Submit</Button>
                             </Col>
