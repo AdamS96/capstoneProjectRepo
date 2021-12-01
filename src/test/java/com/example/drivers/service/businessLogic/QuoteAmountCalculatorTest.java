@@ -33,7 +33,7 @@ class QuoteAmountCalculatorTest {
     void tearDown() {
     }
 
-    // CREATE METHOD TO getDriver to use in all test cases
+
 
     @Test
     void calculateInsuranceQuote1(){
