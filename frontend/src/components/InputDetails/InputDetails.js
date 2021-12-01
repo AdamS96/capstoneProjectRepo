@@ -31,7 +31,7 @@ function InputDetails() {
                 }
             })
             .catch((error) => {
-                toast.error("Oops, something went wrong!")
+                toast.error("Sorry, something went wrong.")
                 console.log(error.config);
             });
     };

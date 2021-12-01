@@ -38,11 +38,11 @@ function Administrator() {
             })
             .catch((error) => {
                 if (error.response.status === 404) {
-                    toast.error(`Sorry, Driver ID ${data.id} does not exist.`)
+                    toast.error(`Driver ID ${data.id} does not exist.`)
                 } else {
-                    console.log("Error", error.message);
+                    console.log("Error: ", error.message);
                 }
-                toast.error("Oops, something went wrong!")
+                toast.error("Sorry, something went wrong.")
                 console.log(error.config);
             });
     };
@@ -107,7 +107,7 @@ function Administrator() {
                     } else {
                         console.log("Error", error.message);
                     }
-                    toast.error("Oops, something went wrong!")
+                    toast.error("Sorry, something went wrong.")
                     console.log(error.config);
                 });
         }
